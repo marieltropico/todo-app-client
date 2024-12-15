@@ -4,7 +4,6 @@ import { AuthProvider, useAuth } from '../AuthContext';
 import { authApi } from '../../api/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Mock dependencies
 jest.mock('../../api/client', () => ({
   authApi: {
     login: jest.fn(),
@@ -19,7 +18,6 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
   removeItem: jest.fn(),
 }));
 
-// Test component to access context
 const TestComponent = () => {
   const auth = useAuth();
   return null;
@@ -72,17 +70,14 @@ describe('AuthContext', () => {
       </AuthProvider>
     );
   
-    // Wait for initial auth check to complete
     await waitFor(() => {
       expect(authContext!.isLoading).toBe(false);
     });
   
-    // Perform login
     await act(async () => {
       await authContext!.login('testuser', 'password');
     });
   
-    // Verify the results
     expect(authApi.login).toHaveBeenCalledWith('testuser', 'password');
     expect(AsyncStorage.setItem).toHaveBeenCalledWith('userId', mockUserId);
     expect(authContext!.isAuthenticated).toBe(true);

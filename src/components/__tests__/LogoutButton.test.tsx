@@ -5,7 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import { useAuth } from '../../context/AuthContext';
 import { Alert } from 'react-native';
 
-// Mock the navigation and auth hooks
 jest.mock('@react-navigation/native', () => ({
   useNavigation: jest.fn()
 }));
@@ -14,7 +13,6 @@ jest.mock('../../context/AuthContext', () => ({
   useAuth: jest.fn()
 }));
 
-// Mock Alert.alert
 jest.spyOn(Alert, 'alert');
 
 describe('LogoutButton', () => {
@@ -24,7 +22,6 @@ describe('LogoutButton', () => {
   const mockLogout = jest.fn();
 
   beforeEach(() => {
-    // Setup mocks before each test
     (useNavigation as jest.Mock).mockReturnValue(mockNavigation);
     (useAuth as jest.Mock).mockReturnValue({ logout: mockLogout });
     jest.clearAllMocks();

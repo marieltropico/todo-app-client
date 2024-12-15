@@ -1,17 +1,44 @@
-# Welcome to your Expo app 👋
+# Todo App with React Native & Expo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A full-stack todo application built with React Native, Expo, and TypeScript, featuring user authentication and real-time todo management.
 
-## Get started
+## Features
+
+- 🔐 User Authentication (Login/Register)
+- ✅ Create, Read, Update, Delete Todos
+- 🔄 Real-time Updates
+- 💾 Persistent Storage
+- 📱 Cross-platform (iOS, Android, Web)
+- 🔒 Secure API Integration
+- ✨ Clean and Intuitive UI
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- Expo CLI
+- iOS Simulator (for iOS) or Android Emulator (for Android)
+
+## Getting Started
 
 1. Install dependencies
-
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 
 2. Start the app
+```bash
+npx expo start
+```
 
-  ```bash
-  npx expo start
-  ```
+3. Run on your preferred platform:
+- Press `i` for iOS simulator
+- Press `a` for Android emulator
+- Press `w` for web browser
+
+## Testing
+
+To run tests:
+```bash
+npm run test:coverage
+```

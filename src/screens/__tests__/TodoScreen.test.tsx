@@ -4,7 +4,6 @@ import { Alert } from 'react-native';
 import { TodoScreen } from '../TodoScreen';
 import { todoApi } from '../../api/client';
 
-// Mock the API client
 jest.mock('../../api/client', () => ({
   todoApi: {
     getTodos: jest.fn(),
@@ -14,7 +13,6 @@ jest.mock('../../api/client', () => ({
   },
 }));
 
-// Mock Alert
 jest.spyOn(Alert, 'alert');
 
 describe('TodoScreen', () => {
