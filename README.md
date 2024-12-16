@@ -19,6 +19,16 @@ A full-stack todo application built with React Native, Expo, and TypeScript, fea
 - Expo CLI
 - iOS Simulator (for iOS) or Android Emulator (for Android)
 
+## Environment Variables
+Note: For ease of review, the .env file has been included in the repository. In a production environment, you should:
+
+- Remove .env from version control
+- Add it to .gitignore
+- Create a .env.example file with:
+```
+EXPO_PUBLIC_API_URL=http://localhost:5001/api
+```
+
 ## Getting Started
 
 1. Install dependencies
